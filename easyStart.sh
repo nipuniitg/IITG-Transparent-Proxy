@@ -12,17 +12,12 @@ then
 	make -C ./redsocks/
 fi
 
-# Comment this section out and use the arugements directly if you prefer that. I've given an example in the next commented section
-read -p "Enter the proxy address: " proxy
-read -p "Enter the proxy port: " port
-read -p "Enter your proxy username: " username
+#Soon to be replaced by a separate means to put in proxy so that one out of many choices can be chosen easily.
+proxy=202.141.80.22
+port=3128
+username="rovin"
 read -s -p "Enter your proxy password: " password
 echo " " 
-# Uncomment this section to use details stored in the file
-#proxy=202.141.80.22
-#port=3128
-#username=<username>
-#password=<passwd>
 
 sudo echo "Got sudo rights"
 ./script start & 

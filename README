@@ -6,7 +6,14 @@ Mini fake DNS server (http://code.activestate.com/recipes/491264-mini-fake-dns-s
 Me (Suhail Sherif) and Ajaykumar Kannan - for developing it.
 iptables - for being so awesome
 
-TODO - Removing cache entries, Licensing, GUI, packaging and Improvements (Includes analysis of the working of the IITG DNS)
+TODO
+- Removing cache entries
+- Licensing
+- GUI
+- packaging
+- Improvements (Includes analysis of the working of the IITG DNS)
+- fixing libtool of libevent (It does not resolve spaces in the path while "make install"ing)
+- On Debian based systems, libevent-2.0.so.5 is not automatically (soft-)linked to its correct place
 
 HOWTO:
 (Most of these commands may need superuser priveleges)
@@ -29,5 +36,8 @@ Run sh script stop
 
 IMPORTANT:
 Edit /etc/resolv.conf and add a line 'nameserver 127.0.0.1' at the top. Or add 127.0.0.1 to your DNS serverlist. The former seems cooler.
+If you have installed libevent from the tar file provided in the directory, and you use a Debian based system,  make sure to run the following command:
+ln -s /usr/local/lib/libevent-2.0.so.5 /usr/lib/libevent-2.0.so.5 (on a 32-bit system)
+ln -s /usr/local/lib/libevent-2.0.so.5 /usr/lib64/libevent-2.0.so.5 (on a 64-bit system)
 
 Beware! Non-authentic DNS servers can be used VERY convincingly for phishing. Make sure you are in control of your configuration.
