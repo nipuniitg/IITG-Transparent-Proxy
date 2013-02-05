@@ -696,6 +696,7 @@ static int redsocks_init_instance(redsocks_instance *instance)
 	error = bind(fd, (struct sockaddr*)&instance->config.bindaddr, sizeof(instance->config.bindaddr));
 	if (error) {
 		log_errno(LOG_ERR, "bind");
+		log_error(LOG_DEBUG, "Dumping port in case of error: %u", ntohs(instance->config.bindaddr.sin_port));
 		goto fail;
 	}
 

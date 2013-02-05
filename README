@@ -14,6 +14,7 @@ TODO
 - Improvements (Includes analysis of the working of the IITG DNS)
 - fixing libtool of libevent (It does not resolve spaces in the path while "make install"ing)
 - On Debian based systems, libevent-2.0.so.5 is not automatically (soft-)linked to its correct place
+- Check for port on systems before binding
 
 HOWTO:
 (Most of these commands may need superuser priveleges)
